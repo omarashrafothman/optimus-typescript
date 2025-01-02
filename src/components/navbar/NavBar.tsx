@@ -29,7 +29,7 @@ function NavBar() {
                         <div className='text-2xl tracking-wide'>LAMA</div></Link>
 
                     <div className='hidden xl:flex gap-4'>
-                        <Link href="">Home</Link>
+                        <Link href="/">Home</Link>
                         <Link href="">Shop</Link>
                         <Link href="">Deals</Link>
                         <Link href="">About</Link>
