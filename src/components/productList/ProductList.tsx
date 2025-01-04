@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
+import Pagination from '../pagination/Pagination'
 function ProductList() {
     return (
         <div className='flex justify-between flex-wrap gap-x-8 gap-y-16'>
@@ -76,12 +77,9 @@ function ProductList() {
                 <div className='text-sm text-gray-500'>My description</div>
                 <button className='rounded-2xl ring-1 ring-lama text-lama py-2 px-4 w-max text-xs hover:bg-lama hover:text-white tr'>Add to Cart</button>
 
-
-
-
             </Link>
 
-
+            <Pagination />
         </div>
     )
 }
