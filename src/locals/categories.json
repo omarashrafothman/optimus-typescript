@@ -1,0 +1,62 @@
+[
+    {
+        "categoryId": 1,
+        "categoryName": "Mens Fashion",
+        "categoryImage": "https://images.pexels.com/photos/3054982/pexels-photo-3054982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "categoryDescription": "Stylish and trendy clothing and accessories for men."
+    },
+    {
+        "categoryId": 2,
+        "categoryName": "Womens Fashion",
+        "categoryImage": "https://images.pexels.com/photos/7760806/pexels-photo-7760806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "categoryDescription": "Elegant and fashionable outfits and accessories for women."
+    },
+    {
+        "categoryId": 3,
+        "categoryName": "Electronic",
+        "categoryImage": "https://images.pexels.com/photos/7562029/pexels-photo-7562029.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "categoryDescription": "Latest gadgets, appliances, and tech devices."
+    },
+    {
+        "categoryId": 4,
+        "categoryName": "Furniture",
+        "categoryImage": "https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "categoryDescription": "Modern and comfortable furniture for every space."
+    },
+    {
+        "categoryId": 5,
+        "categoryName": "Watches",
+        "categoryImage": "https://images.pexels.com/photos/23474/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "categoryDescription": "Classic and smartwatches to complement your style."
+    },
+    {
+        "categoryId": 6,
+        "categoryName": "Accessories",
+        "categoryImage": "https://images.pexels.com/photos/22643967/pexels-photo-22643967/free-photo-of-woman-posing-in-white-dress.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+        "categoryDescription": "Chic and unique accessories to enhance your look."
+    },
+    {
+        "categoryId": 7,
+        "categoryName": "Sportswear",
+        "categoryImage": "https://images.pexels.com/photos/1173893/pexels-photo-1173893.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "categoryDescription": "Comfortable and durable activewear for all sports."
+    },
+    {
+        "categoryId": 8,
+        "categoryName": "Books",
+        "categoryImage": "https://images.pexels.com/photos/46274/pexels-photo-46274.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "categoryDescription": "A wide collection of books for every reader."
+    },
+    {
+        "categoryId": 9,
+        "categoryName": "Beauty & Personal Care",
+        "categoryImage": "https://images.pexels.com/photos/3735664/pexels-photo-3735664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "categoryDescription": "Top-quality beauty and grooming products."
+    },
+    {
+        "categoryId": 10,
+        "categoryName": "Toys & Games",
+        "categoryImage": "https://images.pexels.com/photos/3930068/pexels-photo-3930068.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "categoryDescription": "Fun and engaging toys and games for kids and adults."
+    }
+]

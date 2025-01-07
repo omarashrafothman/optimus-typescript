@@ -2,19 +2,17 @@
 
 import { useState } from "react"
 
-function Add() {
+function Add({ stock }) {
     const [quantity, setQuantity] = useState(1)
-    const stock = 4
-    const handleQuantity = (type: "i" | "d") => {
 
+
+    const handleQuantity = (type: "i" | "d") => {
         if (type === "d" && quantity > 1) {
             setQuantity((prev) => prev - 1);
         }
         if (type === "i" && quantity < stock) {
             setQuantity((prev) => prev + 1);
         }
-
-
     }
     return (
         <div className='flex flex-col gap-4'>
@@ -29,7 +27,7 @@ function Add() {
 
 
                     </div>
-                    <div className="text-xs">Only <span className="text-orange-500">4 items</span> left! {"Don't"} miss it</div>
+                    <div className="text-xs">Only <span className="text-orange-500">{stock} items</span> left! {"Don't"} miss it</div>
                 </div>
 
 

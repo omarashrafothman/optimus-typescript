@@ -1,7 +1,13 @@
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 function CartModal() {
     const cartItems = true;
+    function goToCart() {
+
+
+
+    }
     return (
         <div className="w-max absolute p-4 rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-white top-12 right-0 flex flex-col gap-6 z-20">{
 
@@ -43,7 +49,7 @@ function CartModal() {
                         </div>
                         <p className="text-gray-500 text-sm mt-2 mb-4">Lorem ipsum dolor sit amet consectetur.</p>
                         <div className="flex justify-between text-sm">
-                            <button className="rounded-md py-3 px-4 ring-1 ring-gray-300">View Cart</button>
+                            <Link className="rounded-md py-3 px-4 ring-1 ring-gray-300" href="/cart">View Cart</Link>
                             <button className="rounded-md py-3 px-4 bg-black text-white">Checkout</button>
                         </div>
                     </div>

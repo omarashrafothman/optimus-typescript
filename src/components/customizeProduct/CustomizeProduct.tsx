@@ -1,32 +1,60 @@
 import React from 'react'
 
-function CustomizeProduct() {
+function CustomizeProduct({ attributes }: { attributes: Attribute[] }) {
+
+    if (!attributes) {
+        return <div>Loading...</div>;
+    }
+    if (attributes.length === 0) {
+
+        return <div>No attributes Available</div>
+    }
     return (
         <div className="flex flex-col gap-6">
-            <h4 className='font-medium'>Choose a color</h4>
-            <ul className="flex items-center gap-3">
+            {attributes.map((attribute, index) => (
+                <div key={index}>
+                    {attribute.type === 'color' && (
+                        <>
+                            <h4 className="font-medium">Choose a {attribute.type}</h4>
+                            <div className="flex items-center gap-3">
+                                {attribute.colors.map((colorItem, i) => (
+                                    <div
+                                        key={i}
+                                        className={`w-8 h-8 rounded-full ring-1 ring-gray-300 cursor-pointer relative`}
+                                        style={{ backgroundColor: colorItem.value }}
+                                    >
+                                        {!colorItem.available && (
+                                            <div className="absolute w-10 h-[2px] rotate-45 bg-red-400 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </>
+                    )}
 
-                <li className='w-8 h-8 rounded-full ring-1 ring-gray-300 cursor-pointer relative bg-red-500'>
-                    <div className='absolute w-10 h-10 rounded-full ring-2 top-1/2 left-1/2  transform -translate-x-1/2 -translate-y-1/2'></div>
-                </li>
-                <li className='w-8 h-8 rounded-full ring-1 ring-gray-300 cursor-pointer relative bg-blue-500'></li>
-                <li className='w-8 h-8 rounded-full ring-1 ring-gray-300 cursor-not-allowed relative bg-green-500'>
+                    {attribute.sizes && attribute.type === 'size' && (
+                        <>
+                            <h4 className="font-medium">Choose a {attribute.type}</h4>
+                            <div className="flex items-center gap-3">
 
-                    <div className='absolute w-10 h-[2px] rotate-45 bg-red-400  top-1/2 left-1/2  transform -translate-x-1/2 -translate-y-1/2'></div>
-
-
-                </li>
-            </ul>
-            <h4 className='font-medium'>Choose a color</h4>
-            <ul className="flex items-center gap-3">
-                <li className='ring-1 ring-lama text-lama rounded-md py-1 px-4 text-sm cursor-pointer '>Small</li>
-                <li className='ring-1 ring-lama text-white bg-lama rounded-md py-1 px-4 text-sm cursor-pointer '>Medium</li>
-                <li className='ring-1 ring-pink-200 text-white  bg-pink-200  rounded-md py-1 px-4 text-sm cursor-not-allowed '>Large</li>
+                                {attribute.sizes.map((size, i) => (
 
 
+                                    <div
+                                        key={i}
+                                        className={`ring-1 text-sm rounded-md py-1 px-4 cursor-pointer ${size.sizeName === 'medium' ? 'ring-lama text-white bg-lama' : 'ring-gray-300'}`}
+                                        style={{ cursor: size.sizeName === 'large' ? 'not-allowed' : 'pointer' }}
+                                    >
+                                        {size.sizeName}
+                                    </div>
 
+                                ))}
+                            </div>
+                        </>
+                    )}
 
-            </ul>
+                </div>
+            ))}
         </div>
     )
 }
