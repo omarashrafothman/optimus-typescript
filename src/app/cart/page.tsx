@@ -1,6 +1,6 @@
 import CartItem from '@/components/cartItem/CartItem'
 import React from 'react'
-
+import Image from 'next/image'
 function Cart() {
     return (
         <div className="font-sans max-w-6xl max-lg:max-w-2xl mx-auto bg-white p-4">
@@ -21,9 +21,9 @@ function Cart() {
                     </div>
 
                     <div className="mt-4 flex flex-wrap justify-center gap-4">
-                        <img src='https://readymadeui.com/images/master.webp' alt="card1" className="w-12 object-contain" />
-                        <img src='https://readymadeui.com/images/visa.webp' alt="card2" className="w-12 object-contain" />
-                        <img src='https://readymadeui.com/images/american-express.webp' alt="card3" className="w-12 object-contain" />
+                        <Image src='https://readymadeui.com/images/master.webp' alt="card1" className="w-12 object-contain" />
+                        <Image src='https://readymadeui.com/images/visa.webp' alt="card2" className="w-12 object-contain" />
+                        <Image src='https://readymadeui.com/images/american-express.webp' alt="card3" className="w-12 object-contain" />
                     </div>
                 </div>
 

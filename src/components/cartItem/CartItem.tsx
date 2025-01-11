@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link';
 import React, { useState } from 'react'
-
+import Image from 'next/image';
 function CartItem({ name, price, img }: cartType) {
     const [qty, setQuantity] = useState(1);
     function handleQuantityChange(action: 'increase' | 'decrease') {
@@ -23,7 +23,7 @@ function CartItem({ name, price, img }: cartType) {
         <>
             <div className="flex items-center gap-4">
                 <div className="w-24 h-24 shrink-0 bg-white p-2 rounded-md">
-                    <Link href="/1"> <img src={img} className="w-full h-full object-contain" /></Link>
+                    <Link href="/1"> <Image src={img} className="w-full h-full object-contain" alt='' /></Link>
                 </div>
                 <div className="w-full">
                     <h3 className="text-base font-semibold text-gray-800"><Link href="/1">{name}</Link></h3>
