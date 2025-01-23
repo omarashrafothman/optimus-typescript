@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import { useState } from "react";
 
-function ProductImages({ images }: { images: { galleryItem: string; id: number }[] }) {
+function ProductImages({ images }: { images: { id: number }; galleryItem: string[] }) {
 
     const [index, setIndex] = useState(0);
 

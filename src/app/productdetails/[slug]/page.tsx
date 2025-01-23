@@ -8,8 +8,8 @@ import productsArr from '../../../locals/products.json';
 function SinglePage() {
     const param = useParams()
     const slug = Number(param.slug)
-    const [product, setProduct] = useState<Product | undefined>(undefined);
-    const [products, setProducts] = useState();
+    const [product, setProduct] = useState<Product | undefined>();
+    const [products, setProducts] = useState<ProductList | undefined>();
 
 
     useEffect(() => {
@@ -22,6 +22,7 @@ function SinglePage() {
             setProduct(foundProduct);
         }
     }, [slug, products]);
+
 
     return (
         <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative flex flex-col lg:flex-row gap-16">
@@ -46,12 +47,19 @@ function SinglePage() {
                 <Add stock={product?.quantity} />
                 <div className='h-[2px] bg-gray-100' />
 
-                {product?.review.map(item => (<div className='text-sm' key={item.id}>
 
-                    {/* <h4 className='font-medium mb-4'>Tittle</h4> */}
-                    <p>{item.message}</p>
-                </div>))}
 
+                {product?.review && (
+                    <div>
+                        <h2>Reviews</h2>
+                        {product.review.map(item => (
+                            <div className='text-sm' key={item.id}>
+                                {/* <h4 className='font-medium mb-4'>Tittle</h4> */}
+                                <p>{item.message}</p>
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     )

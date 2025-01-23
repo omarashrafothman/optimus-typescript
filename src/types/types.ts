@@ -38,12 +38,34 @@ type productType = {
     productDescription: string,
     productImageOne: string,
     productImageTwo: string
-
-
-
 }
 
-interface Product {
+type Color = {
+    colorName?: string;
+    value?: string;
+    available?: boolean;
+};
+
+type Size = {
+    sizeName?: string;
+    value?: string;
+    available?: boolean;
+};
+
+type GalleryItem = {
+    id?: number;
+    galleryItem?: string;
+};
+
+
+
+type Attribute = {
+    type: "color" | "size" | string; // Allow any string for flexibility
+    colors?: Color[];
+    sizes?: Size[];
+};
+
+type Product = {
     id: number;
     name: string;
     category: string;
@@ -53,18 +75,15 @@ interface Product {
     discount: number;
     inStock: boolean;
     quantity: number;
-    gallery: { id: number, galleryItem: string }[];
-    attributes: { colors: { colorName: string, value: string, available: boolean }[] }[];
-    review: { id: number, message: string }[];
-}
+    gallery?: GalleryItem[];
+    attributes?: Attribute[] | null;
+    review?: {
+        id: number;
+        message: string;
+    }[];
+};
 
-interface products {
 
-    content: Product[]
 
-}
-interface Attribute {
-    type: string;
-    colors?: { colorName?: string; value?: string; available?: boolean }[];
-    sizes?: { sizeName?: string; value?: string; available?: boolean }[];
-}
+
+type ProductList = Product[];
