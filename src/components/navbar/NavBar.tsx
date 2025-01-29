@@ -14,7 +14,7 @@ function NavBar() {
             <div className='h-full flex items-center justify-between md:hidden'>
                 {/* mobile screen */}
 
-                <Link href="/"><div className='text-2xl tracking-wide'>LAMA</div></Link>
+                <Link href="/"><div className='text-2xl tracking-wide'>Optimus</div></Link>
                 <Menu />
             </div>
             {/* bigger screen */}
@@ -29,7 +29,7 @@ function NavBar() {
                         <Image src="/logo.png" alt="" width={24} height={24} />
 
 
-                        <div className='text-2xl tracking-wide'>LAMA</div></Link>
+                        <div className='text-2xl tracking-wide'>Optimus</div></Link>
 
                     <div className='hidden xl:flex gap-4'>
                         <Link href="/">Home</Link>
