@@ -5,7 +5,7 @@ type Order = {
     status: string
 };
 
-type orderType = {
+export interface orderType {
     content: Order[];
 };
 export interface inputType {
@@ -17,7 +17,7 @@ export interface inputType {
 };
 
 
-type pagenationType = {
+export interface pagenationType {
 
     currentPage: number;
     hasPrev: boolean;
@@ -31,7 +31,7 @@ type cartType = {
     img: string,
     quantity?: number
 }
-type productType = {
+export interface productType {
     productId: number,
     productName: string,
     productDescription: string,

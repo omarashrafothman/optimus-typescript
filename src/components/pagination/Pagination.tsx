@@ -1,6 +1,6 @@
 "use client"
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-
+import { pagenationType } from "../../types/types";
 function Pagination({
     currentPage,
     hasPrev,

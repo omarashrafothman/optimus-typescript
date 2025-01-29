@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { orderType } from '@/types/types'
 function OrderTable({ content }: orderType) {
     return (
         <table className="table-auto rounded-2xl w-full ">
