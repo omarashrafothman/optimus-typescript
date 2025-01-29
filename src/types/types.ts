@@ -8,14 +8,13 @@ type Order = {
 type orderType = {
     content: Order[];
 };
-
-type inputType = {
+export interface inputType {
     inputName: string;
     placeholder: string;
-    inputType: string;
+    inputType: 'text' | 'email' | 'password' | 'number' | 'search' | string; // Limiting to common input types
     value?: string;
     label: string;
-}
+};
 
 
 type pagenationType = {
@@ -62,11 +61,12 @@ export interface GalleryItemType {
     galleryItem: string;
 }
 
-type Attribute = {
+export interface Attribute {
     type: "color" | "size" | string;
-    colors?: Color[];
-    sizes?: Size[];
-};
+    colors?: Color[]; // Allow undefined
+    sizes?: Size[]; // Allow undefined
+}
+
 
 // type Product = {
 //     id: number;

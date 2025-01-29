@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import productsArr from '../../../locals/products.json';
 import { GalleryItemType, Product } from '../../../types/types'; // Import the type
-
+import { Attribute } from "../../../types/types";
 function SinglePage() {
     const param = useParams();
     const slug = param?.slug ? Number(param.slug) : NaN;
@@ -48,7 +48,7 @@ function SinglePage() {
                 </div>
                 <div className='h-[2px] bg-gray-100' />
                 <CustomizeProduct attributes={product?.attributes ?? []} />
-                <Add stock={product?.quantity} />
+                <Add stock={product?.quantity ?? 0} />
                 <div className='h-[2px] bg-gray-100' />
                 {product?.review && (
                     <div>

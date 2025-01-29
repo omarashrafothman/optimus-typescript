@@ -2,6 +2,13 @@
 import Link from 'next/link';
 import React, { useState } from 'react'
 import Image from 'next/image';
+type cartType = {
+    name: string;
+    price: number;
+    img: string;
+    quantity?: number;
+};
+
 function CartItem({ name, price, img }: cartType) {
     const [qty, setQuantity] = useState(1);
     function handleQuantityChange(action: 'increase' | 'decrease') {
@@ -9,7 +16,6 @@ function CartItem({ name, price, img }: cartType) {
             if (action === 'increase') {
                 return prevQuantity + 1;
             } else if (action === 'decrease') {
-
                 if (prevQuantity > 1) {
                     return prevQuantity - 1;
                 } else {
@@ -21,7 +27,7 @@ function CartItem({ name, price, img }: cartType) {
     }
     return (
         <>
-            <div className="flex items-center gap-4"> 
+            <div className="flex items-center gap-4">
                 <div className="w-24 h-24 shrink-0 bg-white p-2 rounded-md">
                     <Link href="/1"> <Image src={img} className="w-full h-full object-contain" alt='' /></Link>
                 </div>
@@ -57,4 +63,4 @@ function CartItem({ name, price, img }: cartType) {
     )
 }
 
-export default CartItem
+export default CartItem;
