@@ -4,10 +4,7 @@ import ProductList from "@/components/productList/ProductList"
 import Slider from "@/components/slider/Slider"
 
 
-
 const HomePage = () => {
-
-
 
   return (
     <div className=''>
