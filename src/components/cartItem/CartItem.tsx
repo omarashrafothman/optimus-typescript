@@ -21,7 +21,7 @@ function CartItem({ name, price, img }: cartType) {
     }
     return (
         <>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4"> 
                 <div className="w-24 h-24 shrink-0 bg-white p-2 rounded-md">
                     <Link href="/1"> <Image src={img} className="w-full h-full object-contain" alt='' /></Link>
                 </div>

@@ -52,20 +52,41 @@ type Size = {
     available?: boolean;
 };
 
-type GalleryItem = {
-    id?: number;
-    galleryItem?: string;
-};
+// type GalleryItemType = {
+//     id: number | undefined;
+//     galleryItem?: string | undefined | null;
+// };
 
-
+export interface GalleryItemType {
+    id: number;
+    galleryItem: string;
+}
 
 type Attribute = {
-    type: "color" | "size" | string; // Allow any string for flexibility
+    type: "color" | "size" | string;
     colors?: Color[];
     sizes?: Size[];
 };
 
-type Product = {
+// type Product = {
+//     id: number;
+//     name: string;
+//     category: string;
+//     price: number;
+//     rate: number;
+//     description: string;
+//     discount: number;
+//     inStock: boolean;
+//     quantity: number;
+//     gallery?: GalleryItemType[];
+//     attributes?: Attribute[] | null;
+//     review?: {
+//         id: number;
+//         message: string;
+//     }[];
+// };
+
+export interface Product {
     id: number;
     name: string;
     category: string;
@@ -75,14 +96,17 @@ type Product = {
     discount: number;
     inStock: boolean;
     quantity: number;
-    gallery?: GalleryItem[];
-    attributes?: Attribute[] | null;
-    review?: {
+    gallery: GalleryItemType[];
+    attributes: {
+        type: string;
+        colors?: { colorName: string; value: string; available: boolean }[];
+        sizes?: { sizeName: string; value: string; available: boolean }[];
+    }[]; // Updated attributes type
+    review: {
         id: number;
         message: string;
     }[];
-};
-
+}
 
 
 

@@ -1,32 +1,28 @@
-"use client"
-import React from 'react'
-import Image from 'next/image'
+// In ProductImages.tsx
+import React, { useState } from "react";
+import Image from "next/image";
+import { GalleryItemType } from "../../types/types"; // Import the type
 
-import { useState } from "react";
-
-function ProductImages({ images }: { images: { id: number }; galleryItem: string[] }) {
-
+function ProductImages({ images }: { images: GalleryItemType[] }) {
     const [index, setIndex] = useState(0);
 
-    if (!images) {
-        return <p>Loading...</p>;
-    }
-    if (images.length === 0) {
+    if (!images || images.length === 0) {
         return <p>No images available</p>;
     }
+
     return (
-        <div className="">
+        <div>
             <div className="h-[500px] relative">
                 <Image
-                    src={images[index].galleryItem}
-                    alt=""
+                    src={images[index]?.galleryItem}
+                    alt={`Product Image ${index + 1}`}
                     fill
                     sizes="50vw"
                     className="object-cover rounded-md"
                 />
             </div>
             <div className="flex justify-between gap-4 mt-8">
-                {images.map((img: any, i: number) => (
+                {images.map((img, i) => (
                     <div
                         className="w-1/4 h-32 relative gap-4 mt-8 cursor-pointer"
                         key={img.id}
@@ -34,7 +30,7 @@ function ProductImages({ images }: { images: { id: number }; galleryItem: string
                     >
                         <Image
                             src={img.galleryItem}
-                            alt=""
+                            alt={`Thumbnail ${i + 1}`}
                             fill
                             sizes="30vw"
                             className="object-cover rounded-md"
@@ -43,7 +39,7 @@ function ProductImages({ images }: { images: { id: number }; galleryItem: string
                 ))}
             </div>
         </div>
-    )
+    );
 }
 
-export default ProductImages
+export default ProductImages;
